@@ -1,5 +1,5 @@
 import { FormEvent, useRef, useState } from "react";
-import { Button, Col, Form, FormGroup, Row, Stack } from "react-bootstrap";
+import { Button, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import CreatableReactSelect from "react-select/creatable";
 import { NoteData, Tag } from "../types";
@@ -34,13 +34,13 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
       <Stack gap={4}>
         <Row>
           <Col>
-            <FormGroup controlId="title">
+            <Form.Group controlId="title">
               <Form.Label>Title</Form.Label>
               <Form.Control required ref={titleRef} />
-            </FormGroup>
+            </Form.Group>
           </Col>
           <Col>
-            <FormGroup controlId="tags">
+            <Form.Group controlId="tags">
               <Form.Label>Body</Form.Label>
               <CreatableReactSelect
                 onCreateOption={(label) => {
@@ -63,13 +63,13 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
                 }}
                 isMulti
               />
-            </FormGroup>
+            </Form.Group>
           </Col>
         </Row>
-        <FormGroup controlId="markdown">
+        <Form.Group controlId="markdown">
           <Form.Label>Body</Form.Label>
           <Form.Control required as="textarea" rows={10} ref={markdownRef} />
-        </FormGroup>
+        </Form.Group>
         <Stack direction="horizontal" gap={2} className="justify-content-end">
           <Button type="submit" variant="primary">
             Save
