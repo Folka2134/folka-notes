@@ -1,4 +1,6 @@
-import { Col, Form, Row, Stack } from "react-bootstrap";
+import { Button, Col, Form, FormGroup, Row, Stack } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import CreatableReactSelect from "react-select/creatable";
 
 const NoteForm = () => {
   return (
@@ -6,14 +8,32 @@ const NoteForm = () => {
       <Stack gap={4}>
         <Row>
           <Col>
-            <Form.Label>Title</Form.Label>
-            <Form.Control required />
+            <FormGroup controlId="title">
+              <Form.Label>Title</Form.Label>
+              <Form.Control required />
+            </FormGroup>
           </Col>
           <Col>
-            <Form.Label>Tags</Form.Label>
-            <Form.Control required />
+            <FormGroup controlId="tags">
+              <Form.Label>Body</Form.Label>
+              <CreatableReactSelect isMulti />
+            </FormGroup>
           </Col>
         </Row>
+        <FormGroup controlId="markdown">
+          <Form.Label>Body</Form.Label>
+          <Form.Control required as="textarea" rows={10} />
+        </FormGroup>
+        <Stack direction="horizontal" gap={2} className="justify-content-end">
+          <Button type="submit" variant="primary">
+            Save
+          </Button>
+          <Link to="..">
+            <Button type="button" variant="outline-secondary">
+              Cancel
+            </Button>
+          </Link>
+        </Stack>
       </Stack>
     </Form>
   );
