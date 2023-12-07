@@ -13,7 +13,7 @@ const EditNote = ({ onSubmit, onAddTag, availableTags }: EditNoteProps) => {
 
   return (
     <>
-      <h1 className="mb-4">Edit Note</h1>
+      <h1 className="mb-4 tw-text-white">Edit Note</h1>
       <NoteForm
         title={note.title}
         markdown={note.markdown}

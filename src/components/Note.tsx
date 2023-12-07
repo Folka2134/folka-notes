@@ -15,7 +15,7 @@ const Note = ({ onDelete }: NoteProps) => {
     <>
       <Row className="align-items-center mb-4">
         <Col>
-          <h1>{note.title}</h1>
+          <h1 className="tw-text-white">{note.title}</h1>
           {note.tags.length > 0 && (
             <Stack gap={1} direction="horizontal" className="flex-wrap">
               {note.tags.map((tag) => (
@@ -40,12 +40,12 @@ const Note = ({ onDelete }: NoteProps) => {
               Delete
             </Button>
             <Link to="/">
-              <Button variant="outline-seconday">Back</Button>
+              <Button variant="outline-warning">Back</Button>
             </Link>
           </Stack>
         </Col>
       </Row>
-      <ReactMarkdown>{note.markdown}</ReactMarkdown>
+      <ReactMarkdown className="tw-text-white">{note.markdown}</ReactMarkdown>
     </>
   );
 };

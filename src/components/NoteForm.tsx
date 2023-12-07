@@ -42,13 +42,13 @@ const NoteForm = ({
         <Row>
           <Col>
             <Form.Group controlId="title">
-              <Form.Label>Title</Form.Label>
+              <Form.Label className="tw-text-white">Title</Form.Label>
               <Form.Control required ref={titleRef} defaultValue={title} />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group controlId="tags">
-              <Form.Label>Body</Form.Label>
+              <Form.Label className="tw-text-white">Body</Form.Label>
               <CreatableReactSelect
                 onCreateOption={(label) => {
                   const newTag = { id: uuidV4(), label };
@@ -65,7 +65,7 @@ const NoteForm = ({
                   setSelectedTags(
                     tags.map((tag) => {
                       return { label: tag.label, id: tag.value };
-                    })
+                    }),
                   );
                 }}
                 isMulti
@@ -74,7 +74,6 @@ const NoteForm = ({
           </Col>
         </Row>
         <Form.Group controlId="markdown">
-          <Form.Label>Body</Form.Label>
           <Form.Control
             required
             as="textarea"
@@ -88,7 +87,7 @@ const NoteForm = ({
             Save
           </Button>
           <Link to="..">
-            <Button type="button" variant="outline-secondary">
+            <Button type="button" variant="outline-warning">
               Cancel
             </Button>
           </Link>

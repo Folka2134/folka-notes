@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { v4 as uuidV4 } from "uuid";
 
@@ -81,8 +81,7 @@ function App() {
   };
 
   return (
-    <Container className="my-4 tw-bg-purple-600">
-      <div>test</div>
+    <div className="p-4 tw-min-w-screen tw-min-h-screen tw-bg-black">
       <Routes>
         <Route
           path="/"
@@ -120,7 +119,7 @@ function App() {
         </Route>
         <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
-    </Container>
+    </div>
   );
 }
 

@@ -47,7 +47,7 @@ const NoteList = ({
           note.title.toLowerCase().includes(title.toLowerCase())) &&
         (selectedTags.length === 0 ||
           selectedTags.every((tag) =>
-            note.tags.some((noteTag) => noteTag.id === tag.id)
+            note.tags.some((noteTag) => noteTag.id === tag.id),
           ))
       );
     });
@@ -57,7 +57,7 @@ const NoteList = ({
     <>
       <Row className="align-items-center mb-4">
         <Col>
-          <h1>Folka-Notes</h1>
+          <h1 className="tw-text-white">Folka-Notes</h1>
         </Col>
         <Col xs="auto">
           <Stack gap={2} direction="horizontal">
@@ -66,7 +66,7 @@ const NoteList = ({
             </Link>
             <Button
               onClick={() => setEditTagsModalIsOpen(true)}
-              variant="outline-secondary"
+              variant="outline-warning"
             >
               Edit Tags
             </Button>
@@ -77,7 +77,7 @@ const NoteList = ({
         <Row className="mb-4">
           <Col>
             <Form.Group controlId="title">
-              <Form.Label>Title</Form.Label>
+              <Form.Label className="tw-text-white">Title</Form.Label>
               <Form.Control
                 type="text"
                 value={title}
@@ -87,7 +87,7 @@ const NoteList = ({
           </Col>
           <Col>
             <Form.Group controlId="tags">
-              <Form.Label>Tags</Form.Label>
+              <Form.Label className="tw-text-white">Tags</Form.Label>
               <ReactSelect
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
@@ -99,7 +99,7 @@ const NoteList = ({
                   setSelectedTags(
                     tags.map((tag) => {
                       return { label: tag.label, id: tag.value };
-                    })
+                    }),
                   );
                 }}
                 isMulti

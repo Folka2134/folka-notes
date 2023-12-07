@@ -10,7 +10,7 @@ type NewNoteProps = {
 const NewNote = ({ onSubmit, onAddTag, availableTags }: NewNoteProps) => {
   return (
     <>
-      <h1 className="mb-4">NewNote</h1>
+      <h1 className="mb-4 tw-text-white">New Note</h1>
       <NoteForm
         onSubmit={onSubmit}
         onAddTag={onAddTag}
