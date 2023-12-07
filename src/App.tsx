@@ -1,16 +1,18 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import { Navigate, Route, Routes } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import NewNote from "./components/NewNote";
-import { NoteData, RawNote, Tag } from "./types";
-import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useMemo } from "react";
+import { Container } from "react-bootstrap";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { v4 as uuidV4 } from "uuid";
+
+import { useLocalStorage } from "./hooks/useLocalStorage";
+import { NoteData, RawNote, Tag } from "./types";
+import NewNote from "./components/NewNote";
 import NoteList from "./components/NoteList";
 import NoteLayout from "./components/NoteLayout";
 import Note from "./components/Note";
 import EditNote from "./components/EditNote";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", []);
@@ -79,7 +81,8 @@ function App() {
   };
 
   return (
-    <Container className="my-4">
+    <Container className="my-4 tw-bg-purple-600">
+      <div>test</div>
       <Routes>
         <Route
           path="/"
